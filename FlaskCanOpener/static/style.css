@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+    background: #F8F8F8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page {
+    width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 1px #FFF;
+}
+
+.selection{
+    padding: 20px 30px;
+    margin: 15px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.selection hr {
+    background: rgba(0, 0, 0, .1);
+    height:2px;
+    border: 0;
+}
+
+.selection h3 {
+    font-size: 20pt;
+    padding: 0;
+    margin: 0;
+    font-style: bold;
+}
+
+.selection h3:hover {
+    cursor:pointer;
+}
+
+.installedApp {
+    background: #28AE7B;
+    text-shadow: 0 1px 1px  #B4D7BF;
+}
+
+.notInstalledApp {
+    background: #D8D8D8;
+    text-shadow: 0 1px 1px  #B4D7BF;
+}
+
+
+.command {
+    background: #D8D8D8;
+    text-shadow: 0 1px 1px  #B4D7BF;   
+}
+
+.packageBlock {
+    margin-top: 30px;
+}
+
+.inlineCommand {
+    display: inline;
+    padding: 10px;
+    background: rgba(0,0,0,.1);
+    border-radius: 10px;
+}
+
+.inlineCommand:hover {
+    cursor:pointer;
+}
+
+.terminal {
+    padding: 10px 20px;
+    background: rgba(0,0,0,.8);
+    border-radius: 10px;
+    color: white;
+    font-family: Courier;
+    font-size: 11pt;
+    text-shadow: 0 1px 1px  #000;   
+}
+
+.terminal p {
+    margin: 2px;
+    padding: 0;
+}
+
+.footer {
+    padding: 5px;
+    text-align: center;
+}
+
+.footer a{
+    text-decoration: underline;
+}

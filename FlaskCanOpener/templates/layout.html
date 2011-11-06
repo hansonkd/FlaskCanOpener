@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title>{% block title %}Welcome{% endblock %} | FlaskCanOpener</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<script src="{{ url_for('static', filename='jquery-1.7.min.js') }}"></script>
+{% block extra_js %}
+{% endblock %}
+</script>
+</head>
+<body>
+<div class=page>
+  <div class=body>
+  {% block body %}{% endblock %}
+  </div>
+  <div class=footer>
+    <a href = "https://github.com/dracule/FlaskCanOpener" >CanOpener</a> &mdash; A <a href="http://flask.pocoo.org/">Flask</a> and <a href="https://github.com/a-wild-tigger/CannedZen">CannedZen</a> Application
+  </div>
+</div>
+</body>

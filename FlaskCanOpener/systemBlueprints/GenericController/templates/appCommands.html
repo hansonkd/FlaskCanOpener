@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}
+    Controls for {{ app }}
+{% endblock %}
+{% block body %}
+    <h1>Commands for {{ app }}</h1>
+    {% for command_name, command in commands.items() %}
+        <div class = "command selection">
+            <a href = '{{ url_for('generic_controller.doCommand', app = app, command = command)  }}' ><h3>{{ command_name.capitalize() }}</h3></a> 
+            <p> {{ command.__doc__ }} </p>
+        </div>
+    {% endfor %}
+{% endblock %}

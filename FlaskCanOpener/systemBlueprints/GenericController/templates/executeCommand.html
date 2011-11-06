@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+    Executing Command {{ command }} for {{ app }}
+{% endblock %}
+{% block extra_js %}
+<script type="text/javascript">
+var updateInter = window.setInterval(updateTerminal, 10);
+
+function updateTerminal() { $.ajax({
+    url: "{{ url_for('generic_controller.getCommandState', command = command, app = app) }}",
+    success: function(data){
+        if (data.commandOutput == "EndOfCommand"){
+            window.clearInterval(updateInter);
+        }
+        else {
+            $('.terminal').append('<div class= "cliCommand"><p>'+ data.commandOutput  +'</p></div>');
+        }
+        
+    }
+  });
+}
+</script>
+{% endblock %}
+{% block body %}
+    <h1>Executing {{ app }}.{{ command }}</h1>
+    <div class = "terminal">
+        <div class= = "cliCommand"><h2>Processing Command...</h2></div>
+        <hr />
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+    CannedZen Package Viewer
+{% endblock %}
+{% block body %}
+    <h1>CannedZen Packages</h1>
+    <div class = "packageBlock">
+    <h2>Installed</h2>
+    {% for package, properties in packages.installed.items() %}
+        <div class = "installedApp selection">
+            <a href = '{{ url_for('generic_controller.getControlsForApp', app = package)  }}'><h3>{{ package }}</h3></a>
+            <p> {{ properties.engine.description }} </p>
+            <hr />
+            <h4>Available Commands</h4>
+            <div class="commandHolder">
+                {% for command, command_object in properties.commands.items() %}
+                    <div class="inlineCommand"><a href = "{{ url_for('generic_controller.doCommand', app = package, command = command)  }}">{{ command.capitalize() }}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <div class = "packageBlock">
+    <h2>Not Installed</h2>
+    {% for package, properties in packages.notInstalled.items() %}
+        <div href = '{{ url_for('generic_controller.getControlsForApp', app = package)  }}' class = "notInstalledApp selection">
+            <h3>{{ package }}</h3>
+            <p> {{ properties.description }} </p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
